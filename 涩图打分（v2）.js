@@ -5,9 +5,9 @@ const require = createRequire(import.meta.url);
 
 //==请按照   https://www.wolai.com/uL6J7wwGgftqdKywXprAy6     的教程，配置并在下面填入百度图片内容识别key。
 // 注意，如果你同时也在用色图监听，请不要直接把色图监听的key拿来用，而是要创建另一个应用，因为这两个插件需要使用不同的审核策略
-// var APP_ID = "你的 App ID";
-// var API_KEY = "你的 Api Key";
-// var SECRET_KEY = "你的 Secret Key";
+var APP_ID = "你的 App ID";
+var API_KEY = "你的 Api Key";
+var SECRET_KEY = "你的 Secret Key";
 
 // =====下面是评分从0-100时对图片的评价,可以自行修改引号中的内容====
 var dic = {
