@@ -11,7 +11,12 @@
 有人加群或退群时生成相应的头像表情包，**依赖[宵鸟py-plugin](https://gitee.com/realhuhu/py-plugin)的头像表情包模块**
 ![搓新人头像](./resources/搓新人头像.png)
 
+<br>
+<br>
 
+* ### 涩图打分（v2）（v3）
+可用于评估群聊中图片的风险程度，提醒群员撤回不良图片，以维持群内健康良好的风气。
+![涩图打分](./resources/setumarker.png)
 
 
 <br>
