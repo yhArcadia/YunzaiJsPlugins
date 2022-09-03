@@ -7,7 +7,7 @@ const require = createRequire(import.meta.url);
 var APP_ID = "你的 App ID";
 var API_KEY = "你的 Api Key";
 var SECRET_KEY = "你的 Secret Key";
-
+ 
 // =====下面是评分从0-100时对图片的评价,可以自行修改引号中的内容====
 var dic = {
   0: "就这就这？不要小瞧色图啊混蛋！",//0-10分的评价
