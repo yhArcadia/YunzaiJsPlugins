@@ -3,6 +3,12 @@ import { segment } from "oicq";
 import { FrameToFrame, createEvent } from "../py-plugin/core/client/client.js";
 import { imageUrlToBuffer } from "../py-plugin/core/util/transform.js";
 
+// ！！！注意：此插件实现生成表情包功能需依赖[宵鸟py-plugin](https://gitee.com/realhuhu/py-plugin)的头像表情包模块
+
+// 插件使用中如果遇到问题可@渔火反馈   渔糕就读的幼稚园：134086404
+// 云崽插件库:https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index (码云)     https://github.com/yhArcadia/Yunzai-Bot-plugins-index (GitHub)
+
+
 export class newcomer extends plugin {
   constructor() {
     super({
@@ -65,7 +71,7 @@ export class newcomer extends plugin {
           msg: "",
           group: null
         },
-        message: "欢迎欢迎~"
+        message: ""
       },
       onData: (error, response) => {
         if (error) {
