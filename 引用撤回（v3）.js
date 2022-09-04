@@ -1,4 +1,5 @@
 import { segment } from "oicq";
+import cfg from '../../lib/config/config.js'
 import common from "../../lib/common/common.js"
 // 使用方法： 
 // 1.主人：看到任意想要撤回的消息，对其回复“撤回”二字，即可撤回该条消息（若机器人不是管理员，则只能撤回机器人两分钟内的消息）
@@ -44,9 +45,12 @@ export class chehui extends plugin {
     } else {
       source = (await e.friend.getChatHistory(e.source.time, 1)).pop();
     }
+
+    let botname =  cfg.getGroup(this.group_id).botAlias[0]
+    console.log(botname)
     // 判断权限
-    if ((!e.group.is_owner && !e.group.is_admin) || ((source.sender.role == "owner" || source.sender.role == "admin") && !e.group.is_owner)) {
-      e.reply("唔，" + e.groupConfig.botAlias + "做不到呢")
+    if ((!e.group.is_owner && !e.group.is_admin&&source.sender.user_id!=cfg.qq) || ((source.sender.role == "owner" || source.sender.role == "admin") && !e.group.is_owner)) {
+      e.reply("唔，" + botname + "做不到呢")
       return true
     }
     if ((e.sender.role == "admin" && !source.sender.role == "admin" && !source.sender.role == "owner" || e.sender.role == "owner")) {
@@ -82,16 +86,16 @@ export class chehui extends plugin {
             //定义recallFailReply用于保存“撤回失败”的提醒消息，以便稍后把提醒消息也撤回
             let rclFailRpl;
             if (!e.group.is_admin && !e.group.is_owner)     //如果不是管理和群主
-              rclFailRpl = await e.reply(e.groupConfig.botAlias + "不是管理员，无法撤回两分钟前的消息或别人的消息哦~");//“撤回失败”的提醒。这里感谢@pluto提供了发送消息的同时获取该条消息的方法
+              rclFailRpl = await e.reply(botname + "不是管理员，无法撤回两分钟前的消息或别人的消息哦~");//“撤回失败”的提醒。这里感谢@pluto提供了发送消息的同时获取该条消息的方法
             else  //是管理
-              rclFailRpl = await e.reply(e.groupConfig.botAlias + "无法撤回其他管理员和群主的消息哦~");
+              rclFailRpl = await e.reply(botname + "无法撤回其他管理员和群主的消息哦~");
 
             await common.sleep(5000);//5秒后，把“撤回失败”的提醒撤回掉：
             source = (await e.group.getChatHistory(rclFailRpl.seq, 1)).pop();//获取消息内容
             await common.sleep(100);
             e.group.recallMsg(source.message_id);//撤回消息
           } else {          //是私聊
-            let rclFailRpl = await e.reply(e.groupConfig.botAlias + "无法撤回自己两分钟前的消息和您的消息哦~");
+            let rclFailRpl = await e.reply(botname + "无法撤回自己两分钟前的消息和您的消息哦~");
             await common.sleep(5000);//5秒后，把提醒撤回掉：
             source = (await e.friend.getChatHistory(rclFailRpl.time, 1)).pop();//获取消息内容
             await common.sleep(100);

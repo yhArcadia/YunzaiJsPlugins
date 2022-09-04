@@ -29,7 +29,7 @@ export async function chehui(e) {
     source = (await e.friend.getChatHistory(e.source.time, 1)).pop();
   }
   // 判断权限
-  if((!e.group.is_owner&&!e.group.is_admin)||((source.sender.role=="owner"||source.sender.role=="admin")&&!e.group.is_owner)){
+  if((!e.group.is_owner&&!e.group.is_admin&&source.sender.user_id!=BotConfig.account.qq)||((source.sender.role=="owner"||source.sender.role=="admin")&&!e.group.is_owner)){
     e.reply("唔，"+e.groupConfig.botAlias+"做不到呢")
     return true
   }
