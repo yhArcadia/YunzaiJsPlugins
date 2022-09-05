@@ -40,4 +40,6 @@
 ### 其他
 * [Yunzai-Bot](https://github.com/Le-niao/Yunzai-Bot)
 * Yunzai-Bot插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) [☞gitee](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
-* QQ交流群：134086404 （璃月幼稚园）
+* Yunzai答疑和插件交流群：719834329
+* 渔糕就读的幼稚园：134086404  
+
