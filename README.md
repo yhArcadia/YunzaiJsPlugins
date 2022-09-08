@@ -81,6 +81,6 @@
 ### 其他
 * [Yunzai-Bot](https://github.com/Le-niao/Yunzai-Bot)
 * Yunzai-Bot插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) [☞gitee](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
-* Yunzai答疑和插件交流群：719834329
+* Yunzai答疑和插件交流群：1170075637
 * 渔糕就读的幼稚园：134086404  
 
